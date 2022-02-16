@@ -1,0 +1,21 @@
+SELECT * FROM player_can_bat;
+
+SELECT * FROM player_can_bowl;   
+
+SELECT * FROM player_can_bat AS bat JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number;		// For player who can bat and bowl
+
+SELECT * FROM player_can_bat AS bat RIGHT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number;		// For player who can bowl
+
+SELECT * FROM player_can_bat AS bat LEFT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number;		// For player who can bat
+
+SELECT * FROM player_can_bat AS bat RIGHT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number WHERE bat.Tshirt_number is NULL;		// For player who can bowl only 
+
+SELECT * FROM player_can_bat AS bat LEFT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number WHERE bowl.Tshirt_number is NULL;		// For player who can bat only
+
+SELECT * FROM player_can_bat AS bat RIGHT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number WHERE bat.Tshirt_number is NULL UNION ALL
+SELECT * FROM player_can_bat AS bat LEFT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number WHERE bowl.Tshirt_number is NULL;		// For player who can bat only or For player who can bowl ONly
+
+SELECT * FROM player_can_bat AS bat RIGHT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number WHERE bat.Tshirt_number is NULL UNION ALL
+SELECT * FROM player_can_bat AS bat LEFT JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number WHERE bowl.Tshirt_number is NULL UNION ALL
+SELECT * FROM player_can_bat AS bat JOIN player_can_bowl AS bowl ON bat.Tshirt_number = bowl.Tshirt_number;		// For all in two tables;
+
