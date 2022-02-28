@@ -1,8 +1,8 @@
-CREATE DATABASES;
+CREATE database_name;
 
-SHOW DATABASES;
+SHOW database_name;
 
-USE DATABASE database_name;
+USE database_name;
 
 SHOW TABLES;
 
