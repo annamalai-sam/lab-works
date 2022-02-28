@@ -71,7 +71,7 @@
 | 18            | Kholi     | NULL          | NULL        |
 | 45            | Rohit     | NULL          | NULL        |
 
-mysql> `select * from player_can_bat as bat right join player_can_bowl as bowl on bat.Tshirt_number = bowl.Tshirt_number where bat.Tshirt_number is null union all select * from player_can_bat as bat left join player_can_bowl as bowl on bat.Tshirt_number = bowl.Tshirt_number where bowl.Tshirt_number is null union all select * from player_can_bat as bat join player_can_bowl as bowl on bat.Tshirt_number = bowl.Tshirt_number;`
+`select * from player_can_bat as bat right join player_can_bowl as bowl on bat.Tshirt_number = bowl.Tshirt_number where bat.Tshirt_number is null union all select * from player_can_bat as bat left join player_can_bowl as bowl on bat.Tshirt_number = bowl.Tshirt_number where bowl.Tshirt_number is null union all select * from player_can_bat as bat join player_can_bowl as bowl on bat.Tshirt_number = bowl.Tshirt_number;`
 
 | Tshirt_number | name      | Tshirt_number | name        |
 | :------------ | :-------- | :------------ | :---------- |
