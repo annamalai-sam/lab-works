@@ -19,7 +19,7 @@ SHOW TABLES;
 ### MySQL Statement to list the table from selected databases.
 
 ```syntax
-CREATE database_name;
+CREATE DATABASE database_name;
 ```
 
 ### MySQL Statement to Create new database.
