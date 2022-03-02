@@ -309,3 +309,15 @@ select * FROM students inner join student_class using (id);
 | 13  | Chithraj    | chithraj@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 13         | 1     | ACTIVE   |
 
 13 rows in set (0.00 sec)
+
+## Feature 15: Find Class for the given student email id Email: kasi@Freshschools.com Using Subquery.
+
+```syntax
+select * FROM students join student_class on students.id = student_class.student_id where email = "kasi@Freshschools.com";
+```
+
+| id  | name | email                 | mobile_no  | password  | gender | dob  | created_date        | id  | student_id | class | status   |
+| :-- | :--- | :-------------------- | :--------- | :-------- | :----- | :--- | :------------------ | :-- | :--------- | :---- | :------- |
+| 12  | Kasi | kasi@Freshschools.com | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 | 12  | 12         | 2     | INACTIVE |
+
+1 row in set (0.01 sec)
