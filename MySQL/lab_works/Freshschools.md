@@ -285,3 +285,27 @@ select Class,count(*) as number_of_students FROM students join student_class on 
 | 1     | 1                  |
 
 7 rows in set (0.00 sec)
+
+## Feature 13: Display student and class details Using Joins (Inner Join)
+
+```syntax
+select * FROM students inner join student_class using (id);
+```
+
+| id  | name        | email                        | mobile_no  | password  | gender | dob  | created_date        | student_id | class | status   |
+| :-- | :---------- | :--------------------------- | :--------- | :-------- | :----- | :--- | :------------------ | :--------- | :---- | :------- |
+| 1   | Annamalai   | annamalai@Freshschools.com   | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:06:38 | 1          | 12    | ACTIVE   |
+| 2   | Venkat      | venkat@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 2          | 11    | ACTIVE   |
+| 3   | Aswath      | aswath@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 3          | 10    | ACTIVE   |
+| 4   | Haiden      | haiden@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 4          | 9     | INACTIVE |
+| 5   | Santhanu    | santhanu@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 5          | 8     | ACTIVE   |
+| 6   | Sweatha     | sweatha@Freshschools.com     | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 6          | 7     | INACTIVE |
+| 7   | Jerusheya   | jerusheya@Freshschools.com   | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 7          | 6     | ACTIVE   |
+| 8   | Riyas       | riyas@Freshschools.com       | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 8          | 6     | INACTIVE |
+| 9   | Saranya     | saranya@Freshschools.com     | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 9          | 6     | ACTIVE   |
+| 10  | Sangeetha   | sangeetha@Freshschools.com   | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 10         | 4     | INACTIVE |
+| 11  | Annapoorani | annapoorani@Freshschools.com | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 11         | 3     | ACTIVE   |
+| 12  | Kasi        | kasi@Freshschools.com        | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 | 12         | 2     | INACTIVE |
+| 13  | Chithraj    | chithraj@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 13         | 1     | ACTIVE   |
+
+13 rows in set (0.00 sec)
