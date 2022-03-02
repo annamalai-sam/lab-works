@@ -1,3 +1,5 @@
+# FRESHSSCHOOLS
+
 ```syntax
 CREATE DATABASE Freshschools;
 ```
@@ -58,6 +60,8 @@ desc student_class;
 
 4 rows in set (0.01 sec)
 
+## Feature 1: Student Registration
+
 ```syntax
 insert into students (name,email,mobile_no,password,gender) values("Annamalai","annamalai@Freshschools.com","9876543210","12345678","M");
 ```
@@ -70,6 +74,8 @@ insert into students (name,email,mobile_no,password,gender) values("Venkat","ven
 
 Query OK, 12 rows affected (0.01 sec)
 Records: 12 Duplicates: 0 Warnings: 0
+
+## Feature 2: List All Students
 
 ```syntax
 SELECT * FROM students;
