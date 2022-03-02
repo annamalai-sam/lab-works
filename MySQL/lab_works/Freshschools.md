@@ -321,3 +321,7 @@ select * FROM students join student_class on students.id = student_class.student
 | 12  | Kasi | kasi@Freshschools.com | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 | 12  | 12         | 2     | INACTIVE |
 
 1 row in set (0.01 sec)
+
+## Feature 16: Find Students who has not enrolled in a class Using Subquery ( multiple row subquery )
+
+## Feature 17: Display all students name with class - include both enrolled and not enrolled
