@@ -162,3 +162,14 @@ SELECT * FROM student_class;
 13 rows in set (0.00 sec)
 
 ## Feature 6: Find Students who are enrolled in the given class ( question: Find Students who are studying in 5th standard)
+
+```syntax
+select student_id,name,class,gender,email,mobile_no FROM students join student_class on students.id = student_class.student_id where class ="5";
+```
+
+| student_id | name    | class | gender | email                    | mobile_no  |
+| :--------- | :------ | :---- | :----- | :----------------------- | :--------- |
+| 8          | Riyas   | 5     | M      | riyas@Freshschools.com   | 9876543210 |
+| 9          | Saranya | 5     | F      | saranya@Freshschools.com | 9876543210 |
+
+2 rows in set (0.00 sec)
