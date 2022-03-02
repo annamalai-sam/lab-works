@@ -60,3 +60,5 @@ SELECT * FROM student_class;
 | 13  | 13         | 1     | ACTIVE   |
 
 13 rows in set (0.00 sec)
+
+## Feature 6: Find Students who are enrolled in the given class ( question: Find Students who are studying in 5th standard)
