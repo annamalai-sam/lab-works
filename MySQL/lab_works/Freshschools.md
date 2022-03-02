@@ -1,4 +1,4 @@
-# FRESHSSCHOOLS
+# FRESH SCHOOLS
 
 ```syntax
 CREATE DATABASE Freshschools;
@@ -98,3 +98,17 @@ SELECT * FROM students;
 | 13  | Chithraj    | chithraj@Freshschools.com    | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:17:32 |
 
 13 rows in set (0.00 sec)
+
+##
+
+```syntax
+SELECT * FROM students WHERE email ="kasi@Freshschools.com" and password = "12345678";
+```
+
+|  id | name | email                 | mobile_no  | password | gender | dob  | created_date        |
+| --: | :--- | :-------------------- | :--------- | :------- | :----- | :--- | :------------------ |
+|  12 | Kasi | kasi@Freshschools.com | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:17:32 |
+
+1 row in set (0.00 sec)
+
+mysql>
