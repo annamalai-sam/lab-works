@@ -269,3 +269,19 @@ select Class,count(*) as number_of_students FROM students join student_class on 
 7 rows in set (0.00 sec)
 
 ## Feature 12: Find Total no of students actively studying each class which has less than 5 students.
+
+```syntax
+select Class,count(*) as number_of_students FROM students join student_class on students.id = student_class.student_id where status ="ACTIVE" group by class having count(*) < 5;
+```
+
+| Class | number_of_students |
+| :---- | :----------------- |
+| 12    | 1                  |
+| 11    | 1                  |
+| 10    | 1                  |
+| 8     | 1                  |
+| 6     | 2                  |
+| 3     | 1                  |
+| 1     | 1                  |
+
+7 rows in set (0.00 sec)
