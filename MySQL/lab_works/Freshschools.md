@@ -262,7 +262,7 @@ select Class,count(*) as number_of_students FROM students join student_class on 
 | 11    | 1                  |
 | 10    | 1                  |
 | 8     | 1                  |
-| 6     | 1                  |
+| 6     | 2                  |
 | 3     | 1                  |
 | 1     | 1                  |
 
