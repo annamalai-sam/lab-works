@@ -206,3 +206,46 @@ SELECT * FROM student_class;
 13 rows in set (0.01 sec)
 
 ## Feature 8: Student withdrawn from a Class
+
+## Feature 9: Find student details who have not updated their Date Of Birth
+
+```syntax
+select * from students where dob is NULL;
+```
+
+| id  | name        | email                        | mobile_no  | password  | gender | dob  | created_date        |
+| :-- | :---------- | :--------------------------- | :--------- | :-------- | :----- | :--- | :------------------ |
+| 1   | Annamalai   | annamalai@Freshschools.com   | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:06:38 |
+| 2   | Venkat      | venkat@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 |
+| 3   | Aswath      | aswath@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 |
+| 4   | Haiden      | haiden@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 |
+| 5   | Santhanu    | santhanu@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 |
+| 6   | Sweatha     | sweatha@Freshschools.com     | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 |
+| 7   | Jerusheya   | jerusheya@Freshschools.com   | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 |
+| 8   | Riyas       | riyas@Freshschools.com       | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 |
+| 9   | Saranya     | saranya@Freshschools.com     | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 |
+| 10  | Sangeetha   | sangeetha@Freshschools.com   | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 |
+| 11  | Annapoorani | annapoorani@Freshschools.com | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 |
+| 12  | Kasi        | kasi@Freshschools.com        | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 |
+| 13  | Chithraj    | chithraj@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 |
+
+13 rows in set (0.01 sec)
+
+## Feature 10: Find Total no of students actively studying in this school
+
+```syntax
+select * FROM students join student_class on students.id = student_class.student_id where status ="ACTIVE";
+```
+
+| id  | name        | email                        | mobile_no  | password | gender | dob  | created_date        | id  | student_id | class | status |
+| :-- | :---------- | :--------------------------- | :--------- | :------- | :----- | :--- | :------------------ | :-- | :--------- | :---- | :----- |
+| 1   | Annamalai   | annamalai@Freshschools.com   | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:06:38 | 1   | 1          | 12    | ACTIVE |
+| 2   | Venkat      | venkat@Freshschools.com      | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:17:32 | 2   | 2          | 11    | ACTIVE |
+| 3   | Aswath      | aswath@Freshschools.com      | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:17:32 | 3   | 3          | 10    | ACTIVE |
+| 5   | Santhanu    | santhanu@Freshschools.com    | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:17:32 | 5   | 5          | 8     | ACTIVE |
+| 7   | Jerusheya   | jerusheya@Freshschools.com   | 9876543210 | 12345678 | F      | NULL | 2022-03-02 12:17:32 | 7   | 7          | 6     | ACTIVE |
+| 9   | Saranya     | saranya@Freshschools.com     | 9876543210 | 12345678 | F      | NULL | 2022-03-02 12:17:32 | 9   | 9          | 6     | ACTIVE |
+| 11  | Annapoorani | annapoorani@Freshschools.com | 9876543210 | 12345678 | F      | NULL | 2022-03-02 12:17:32 | 11  | 11         | 3     | ACTIVE |
+| 13  | Chithraj    | chithraj@Freshschools.com    | 9876543210 | 12345678 | M      | NULL | 2022-03-02 12:17:32 | 13  | 13         | 1     | ACTIVE |
+
+8 rows in set (0.01 sec)
