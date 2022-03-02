@@ -173,3 +173,36 @@ select student_id,name,class,gender,email,mobile_no FROM students join student_c
 | 9          | Saranya | 5     | F      | saranya@Freshschools.com | 9876543210 |
 
 2 rows in set (0.00 sec)
+
+## Feature 7: Update Student Class information Update student from 5th standard to 6th standard
+
+```syntax
+update student_class set class = "6" where class = "5";
+```
+
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2 Changed: 2 Warnings: 0
+
+```syntax
+SELECT * FROM student_class;
+```
+
+| id  | student_id | class | status   |
+| :-- | :--------- | :---- | :------- |
+| 1   | 1          | 12    | ACTIVE   |
+| 2   | 2          | 11    | ACTIVE   |
+| 3   | 3          | 10    | ACTIVE   |
+| 4   | 4          | 9     | INACTIVE |
+| 5   | 5          | 8     | ACTIVE   |
+| 6   | 6          | 7     | INACTIVE |
+| 7   | 7          | 6     | ACTIVE   |
+| 8   | 8          | 6     | INACTIVE |
+| 9   | 9          | 6     | ACTIVE   |
+| 10  | 10         | 4     | INACTIVE |
+| 11  | 11         | 3     | ACTIVE   |
+| 12  | 12         | 2     | INACTIVE |
+| 13  | 13         | 1     | ACTIVE   |
+
+13 rows in set (0.01 sec)
+
+## Feature 8: Student withdrawn from a Class
