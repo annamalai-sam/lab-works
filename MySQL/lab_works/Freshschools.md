@@ -99,7 +99,7 @@ SELECT * FROM students;
 
 13 rows in set (0.00 sec)
 
-##
+## Feature 3: Login with email and password
 
 ```syntax
 SELECT * FROM students WHERE email ="kasi@Freshschools.com" and password = "12345678";
@@ -111,4 +111,23 @@ SELECT * FROM students WHERE email ="kasi@Freshschools.com" and password = "1234
 
 1 row in set (0.00 sec)
 
-mysql>
+## Feature 4: Update Password
+
+```syntax
+update students set password = "Kasi@2004" where email = "kasi@Freshschools.com";
+```
+
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1 Changed: 1 Warnings: 0
+
+```syntax
+SELECT * FROM students WHERE email ="kasi@Freshschools.com" and password = "Kasi@2004";
+```
+
+| id  | name | email                 | mobile_no  | password  | gender | dob  | created_date        |
+| :-- | :--- | :-------------------- | :--------- | :-------- | :----- | :--- | :------------------ |
+| 12  | Kasi | kasi@Freshschools.com | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 |
+
+1 row in set (0.00 sec)
+
+## Feature 5: Enroll Student into Class
