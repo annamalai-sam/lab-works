@@ -131,3 +131,10 @@ SELECT * FROM students WHERE email ="kasi@Freshschools.com" and password = "Kasi
 1 row in set (0.00 sec)
 
 ## Feature 5: Enroll Student into Class
+
+```syntax
+insert into student_class (student_id,class,status) value ("1","12","ACTIVE"),("2","11","ACTIVE"),("3","10","ACTIVE"),("4","9","INACTIVE"),("5","8","ACTIVE"),("6","7","INACTIVE"),("7","6","ACTIVE"),("8","5","INACTIVE"),("9","5","ACTIVE"),("10","4","INACTIVE"),("11","3","ACTIVE"),("12","2","INACTIVE"),("13","1","ACTIVE");
+```
+
+Query OK, 13 rows affected (0.01 sec)
+Records: 13 Duplicates: 0 Warnings: 0
