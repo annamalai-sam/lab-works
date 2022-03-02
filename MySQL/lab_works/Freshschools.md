@@ -253,17 +253,17 @@ select * FROM students join student_class on students.id = student_class.student
 ## Feature 11: Find Total no of students actively studying in each class
 
 ```syntax
-select count(*),Class FROM students join student_class on students.id = student_class.student_id where status ="ACTIVE" group by class;
+select Class,count(*) as number_of_students FROM students join student_class on students.id = student_class.student_id where status ="ACTIVE" group by class;
 ```
 
-| count(\*) | Class |
-| :-------- | :---- |
-| 1         | 12    |
-| 1         | 11    |
-| 1         | 10    |
-| 1         | 8     |
-| 2         | 6     |
-| 1         | 3     |
-| 1         | 1     |
+| number_of_students | Class |
+| :----------------- | :---- |
+| 1                  | 12    |
+| 1                  | 11    |
+| 1                  | 10    |
+| 1                  | 8     |
+| 2                  | 6     |
+| 1                  | 3     |
+| 1                  | 1     |
 
 7 rows in set (0.00 sec)
