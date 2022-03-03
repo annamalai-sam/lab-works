@@ -358,15 +358,17 @@ select * FROM students inner join student_class using (id);
 
 13 rows in set (0.00 sec)
 
-## Feature 15: Find Class for the given student email id Email: kasi@Freshschools.com Using Subquery.
+## Feature 15: Find Class for the given student email id Email: i@Freshschools.com Using Subquery.
 
 ```syntax
-select * FROM students join student_class on students.id = student_class.student_id where email = "kasi@Freshschools.com";
+select * FROM students join student_class on students.id = student_class.student_id where email like "%i@Freshschools.com";
 ```
 
-| id  | name | email                 | mobile_no  | password  | gender | dob  | created_date        | id  | student_id | class | status   |
-| :-- | :--- | :-------------------- | :--------- | :-------- | :----- | :--- | :------------------ | :-- | :--------- | :---- | :------- |
-| 12  | Kasi | kasi@Freshschools.com | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 | 12  | 12         | 2     | INACTIVE |
+|  id | name        | email                        | mobile_no  | password  | gender | dob  | created_date        | id  | student_id | class | status   |
+| --: | :---------- | :--------------------------- | :--------- | :-------- | :----- | :--- | :------------------ | :-- | :--------- | :---- | :------- |
+|   1 | Annamalai   | annamalai@Freshschools.com   | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:06:38 | 1   | 1          | 12    | ACTIVE   |
+|  11 | Annapoorani | annapoorani@Freshschools.com | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 11  | 11         | 2     | ACTIVE   |
+|  12 | Kasi        | kasi@Freshschools.com        | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 | 12  | 12         | 1     | INACTIVE |
 
 1 row in set (0.01 sec)
 
