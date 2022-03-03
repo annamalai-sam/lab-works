@@ -207,6 +207,53 @@ SELECT * FROM student_class;
 
 ## Feature 8: Student withdrawn from a Class
 
+mysql> select \* From student_class;
++----+------------+-------+----------+
+| id | student_id | class | status |
++----+------------+-------+----------+
+| 1 | 1 | 12 | ACTIVE |
+| 2 | 2 | 11 | ACTIVE |
+| 3 | 3 | 10 | ACTIVE |
+| 4 | 4 | 9 | INACTIVE |
+| 5 | 5 | 8 | ACTIVE |
+| 6 | 6 | 7 | INACTIVE |
+| 7 | 7 | 6 | ACTIVE |
+| 8 | 8 | 5 | INACTIVE |
+| 9 | 9 | 4 | ACTIVE |
+| 10 | 10 | 3 | INACTIVE |
+| 11 | 11 | 2 | ACTIVE |
+| 12 | 12 | 1 | INACTIVE |
+| 13 | 13 | 1 | ACTIVE |
++----+------------+-------+----------+
+13 rows in set (0.00 sec)
+
+```syntax
+delete From student_class where student_id = "13";
+```
+
+Query OK, 1 row affected (0.01 sec)
+
+```syntax
+select * From student_class;
+```
+
+| id  | student_id | class | status   |
+| :-- | :--------- | :---- | :------- |
+| 1   | 1          | 12    | ACTIVE   |
+| 2   | 2          | 11    | ACTIVE   |
+| 3   | 3          | 10    | ACTIVE   |
+| 4   | 4          | 9     | INACTIVE |
+| 5   | 5          | 8     | ACTIVE   |
+| 6   | 6          | 7     | INACTIVE |
+| 7   | 7          | 6     | ACTIVE   |
+| 8   | 8          | 5     | INACTIVE |
+| 9   | 9          | 4     | ACTIVE   |
+| 10  | 10         | 3     | INACTIVE |
+| 11  | 11         | 2     | ACTIVE   |
+| 12  | 12         | 1     | INACTIVE |
+
+12 rows in set (0.00 sec)
+
 ## Feature 9: Find student details who have not updated their Date Of Birth
 
 ```syntax
@@ -324,4 +371,36 @@ select * FROM students join student_class on students.id = student_class.student
 
 ## Feature 16: Find Students who has not enrolled in a class Using Subquery ( multiple row subquery )
 
+```syntax
+select name,email,mobile_no,gender from students left join student_class on students.id = student_class.student_id where (student_class.student_id is null);
+```
+
+| name     | email                     | mobile_no  | gender |
+| :------- | :------------------------ | :--------- | :----- |
+| Chithraj | chithraj@Freshschools.com | 9876543210 | M      |
+
+1 row in set (0.00 sec)
+
 ## Feature 17: Display all students name with class - include both enrolled and not enrolled
+
+```syntax
+select * from students join student_class on student_class.student_id =  students.id union all select * from students left join student_class on students.id = student_class.student_id where (student_class.student_id is null);
+```
+
+|  id | name        | email                        | mobile_no  | password  | gender | dob  | created_date        | id   | student_id | class | status   |
+| --: | :---------- | :--------------------------- | :--------- | :-------- | :----- | :--- | :------------------ | :--- | :--------- | :---- | :------- |
+|   1 | Annamalai   | annamalai@Freshschools.com   | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:06:38 | 1    | 1          | 12    | ACTIVE   |
+|   2 | Venkat      | venkat@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 2    | 2          | 11    | ACTIVE   |
+|   3 | Aswath      | aswath@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 3    | 3          | 10    | ACTIVE   |
+|   4 | Haiden      | haiden@Freshschools.com      | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 4    | 4          | 9     | INACTIVE |
+|   5 | Santhanu    | santhanu@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 5    | 5          | 8     | ACTIVE   |
+|   6 | Sweatha     | sweatha@Freshschools.com     | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 6    | 6          | 7     | INACTIVE |
+|   7 | Jerusheya   | jerusheya@Freshschools.com   | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 7    | 7          | 6     | ACTIVE   |
+|   8 | Riyas       | riyas@Freshschools.com       | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | 8    | 8          | 5     | INACTIVE |
+|   9 | Saranya     | saranya@Freshschools.com     | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 9    | 9          | 4     | ACTIVE   |
+|  10 | Sangeetha   | sangeetha@Freshschools.com   | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 10   | 10         | 3     | INACTIVE |
+|  11 | Annapoorani | annapoorani@Freshschools.com | 9876543210 | 12345678  | F      | NULL | 2022-03-02 12:17:32 | 11   | 11         | 2     | ACTIVE   |
+|  12 | Kasi        | kasi@Freshschools.com        | 9876543210 | Kasi@2004 | M      | NULL | 2022-03-02 12:17:32 | 12   | 12         | 1     | INACTIVE |
+|  13 | Chithraj    | chithraj@Freshschools.com    | 9876543210 | 12345678  | M      | NULL | 2022-03-02 12:17:32 | NULL | NULL       | NULL  | NULL     |
+
+13 rows in set (0.00 sec)

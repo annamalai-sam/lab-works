@@ -1,22 +1,9 @@
-  create table students (
-    id int primary key auto_increment,
-    name varchar(100) not null,
-    email varchar(100) not null unique,
-    mobile_no bigint not null,
-    password varchar(100) not null,
-    gender char(1) not null,
-    dob date,
-    created_date timestamp not null default current_timestamp,
-    check ( gender in ('M','F'))
-  );
+    create table students (id int primary key auto_increment, name varchar(100) not null,email varchar(100) not null unique,mobile_no bigint not null,password varchar(100) not null,gender char(1) not null,dob date,created_date timestamp not null default current_timestamp,check ( gender in ('M','F')));
 
+    create table student_class (id int primary key auto_increment,student_id int not null,class int not null,status varchar(20) not null,foreign key (student_id) references students(id),check( class >= 1 and class <=12),check (status in ('ACTIVE','INACTIVE')));
 
-    create table student_class (
-    id int primary key auto_increment,
-    student_id int not null,
-    class int not null,
-    status varchar(20) not null,
-    foreign key (student_id) references students(id),
-    check( class >= 1 and class <=12),
-    check (status in ('ACTIVE','INACTIVE'))
-  );
+    insert into students (name,email,mobile_no,password,gender) values("Annamalai","annamalai@Freshschools.com","9876543210","12345678","M");
+
+    insert into students (name,email,mobile_no,password,gender) values("Venkat","venkat@Freshschools.com","9876543210","12345678","M"),("Aswath","aswath@Freshschools.com","9876543210","12345678","M"),("Haiden","haiden@Freshschools.com","9876543210","12345678","M"),("Santhanu","santhanu@Freshschools.com","9876543210","12345678","M"),("Sweatha","sweatha@Freshschools.com","9876543210","12345678","F"),("Jerusheya","jerusheya@Freshschools.com","9876543210","12345678","F"),("Riyas","riyas@Freshschools.com","9876543210","12345678","M"),("Saranya","saranya@Freshschools.com","9876543210","12345678","F"),("Sangeetha","sangeetha@Freshschools.com","9876543210","12345678","F"),("Annapoorani","annapoorani@Freshschools.com","9876543210","12345678","F"),("Kasi","kasi@Freshschools.com","9876543210","12345678","M"),("Chithraj","chithraj@Freshschools.com","9876543210","12345678","M");
+
+    
