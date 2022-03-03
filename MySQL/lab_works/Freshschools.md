@@ -207,31 +207,30 @@ SELECT * FROM student_class;
 
 ## Feature 8: Student withdrawn from a Class
 
-````syntax
+```syntax
 select * From student_class;
 ```
 
-| id | student_id | class | status   |
-|:---|:-----------|:------|:---------|
-|  1 |          1 |    12 | ACTIVE   |
-|  2 |          2 |    11 | ACTIVE   |
-|  3 |          3 |    10 | ACTIVE   |
-|  4 |          4 |     9 | INACTIVE |
-|  5 |          5 |     8 | ACTIVE   |
-|  6 |          6 |     7 | INACTIVE |
-|  7 |          7 |     6 | ACTIVE   |
-|  8 |          8 |     5 | INACTIVE |
-|  9 |          9 |     4 | ACTIVE   |
-| 10 |         10 |     3 | INACTIVE |
-| 11 |         11 |     2 | ACTIVE   |
-| 12 |         12 |     1 | INACTIVE |
-
+| id  | student_id | class | status   |
+| :-- | :--------- | :---- | :------- |
+| 1   | 1          | 12    | ACTIVE   |
+| 2   | 2          | 11    | ACTIVE   |
+| 3   | 3          | 10    | ACTIVE   |
+| 4   | 4          | 9     | INACTIVE |
+| 5   | 5          | 8     | ACTIVE   |
+| 6   | 6          | 7     | INACTIVE |
+| 7   | 7          | 6     | ACTIVE   |
+| 8   | 8          | 5     | INACTIVE |
+| 9   | 9          | 4     | ACTIVE   |
+| 10  | 10         | 3     | INACTIVE |
+| 11  | 11         | 2     | ACTIVE   |
+| 12  | 12         | 1     | INACTIVE |
 
 13 rows in set (0.00 sec)
 
 ```syntax
 delete From student_class where student_id = "13";
-````
+```
 
 Query OK, 1 row affected (0.01 sec)
 
