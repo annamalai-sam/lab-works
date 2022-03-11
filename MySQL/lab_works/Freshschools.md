@@ -60,7 +60,7 @@ desc student_class;
 
 4 rows in set (0.01 sec)
 
-####ERR diagram for Freshchool database:
+ERR diagram for Freshchool database:
 ![Academy](https://user-images.githubusercontent.com/93571048/157834681-f024688e-458b-4854-93c4-d90ad18b8dbd.png)
 
 ## Feature 1: Student Registration
