@@ -111,25 +111,25 @@ select * from batch_courses;
 ```
 
 | id  | course_id | batch_id |
-| :-: | --------: | :------- |
-| 37  |         1 | 1        |
-| 38  |         2 | 1        |
-| 39  |         3 | 1        |
-| 40  |         4 | 1        |
-| 41  |         5 | 1        |
-| 42  |         6 | 1        |
-| 43  |         1 | 2        |
-| 44  |         2 | 2        |
-| 45  |         3 | 2        |
-| 46  |         4 | 2        |
-| 47  |         5 | 2        |
-| 48  |         6 | 2        |
-| 49  |         1 | 3        |
-| 50  |         2 | 3        |
-| 51  |         3 | 3        |
-| 52  |         4 | 3        |
-| 53  |         5 | 3        |
-| 54  |         6 | 3        |
+| :-- | :-------- | :------- |
+| 1   | 1         | 1        |
+| 2   | 2         | 1        |
+| 3   | 3         | 1        |
+| 4   | 4         | 1        |
+| 5   | 5         | 1        |
+| 6   | 6         | 1        |
+| 7   | 1         | 2        |
+| 8   | 2         | 2        |
+| 9   | 3         | 2        |
+| 10  | 4         | 2        |
+| 11  | 5         | 2        |
+| 12  | 6         | 2        |
+| 13  | 1         | 3        |
+| 14  | 2         | 3        |
+| 15  | 3         | 3        |
+| 16  | 4         | 3        |
+| 17  | 5         | 3        |
+| 18  | 6         | 3        |
 
 18 rows in set (0.00 sec)
 
@@ -155,3 +155,54 @@ select * from batch_user;
 | 7   | 7       | 3        |
 
 7 rows in set (0.00 sec)
+
+# Take user_name,student_id and batch_name
+
+```syntax
+select user.name as user_name,user.id as user_id,batch.name as batch_name from batch,user,batch_user where user.id = batch_user.user_id and batch.id = batch_user.batch_id;
+```
+
+| user_name | user_id | batch_name |
+| --------- | ------- | ---------- |
+| Annamalai | 1       | batch01    |
+| Aswath    | 2       | batch01    |
+| Haiden    | 3       | batch02    |
+| Santhanu  | 4       | batch02    |
+| Venkat    | 5       | batch03    |
+| Musaraf   | 6       | batch03    |
+| Suguram   | 7       | batch03    |
+
+# Take user id, username,batch id, batch name, courses id,courses name for who learn HTML only
+
+```syntax
+select user.id as user_id,user.name as user_name,batch_user.batch_id,batch.name as batch_name,courses.name as course_name,courses.id as course_id from courses,batch,user,batch_courses,batch_user where batch_user.user_id = user.id and batch_user.batch_id = batch.id and batch_courses.batch_id = batch.id and batch_courses.course_id  = courses.id and batch_courses.course_id = 1;
+```
+
+| user_id | user_name | batch_id | batch_name | course_name | course_id |
+| ------- | --------- | -------- | ---------- | ----------- | --------- |
+| 1       | Annamalai | 1        | batch01    | HTML        | 1         |
+| 2       | Aswath    | 1        | batch01    | HTML        | 1         |
+| 3       | Haiden    | 2        | batch02    | HTML        | 1         |
+| 4       | Santhanu  | 2        | batch02    | HTML        | 1         |
+| 5       | Venkat    | 3        | batch03    | HTML        | 1         |
+| 6       | Musaraf   | 3        | batch03    | HTML        | 1         |
+| 7       | Suguram   | 3        | batch03    | HTML        | 1         |
+
+7 rows in set (0.00 sec)
+
+# Take user id, username,batch id, batch name, courses id,courses name for who name is Suguram
+
+```syntax
+select user.id as user_id,user.name as user_name,batch_user.batch_id,batch.name as batch_name,courses.name as course_name,courses.id as course_id from courses,batch,user,batch_courses,batch_user where batch_user.user_id = user.id and batch_user.batch_id = batch.id and batch_courses.batch_id = batch.id and batch_courses.course_id  = courses.id and user.name = "Suguram";
+```
+
+| user_id | user_name | batch_id | batch_name | course_name | course_id |
+| ------- | --------- | -------- | ---------- | ----------- | --------- |
+| 7       | Suguram   | 3        | batch03    | HTML        | 1         |
+| 7       | Suguram   | 3        | batch03    | CSS         | 2         |
+| 7       | Suguram   | 3        | batch03    | JS          | 3         |
+| 7       | Suguram   | 3        | batch03    | MySQL       | 4         |
+| 7       | Suguram   | 3        | batch03    | Java        | 5         |
+| 7       | Suguram   | 3        | batch03    | Ruby        | 6         |
+
+6 rows in set (0.00 sec)
