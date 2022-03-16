@@ -194,8 +194,7 @@ select user.id as user_id,user.name as user_name,batch_user.batch_id,batch.name 
 
 ```syntax
 select user.id as user_id,user.name as user_name,batch_user.batch_id,batch.name as batch_name,courses.name as course_name,courses.id as course_id from courses,batch,user,batch_courses,batch_user where batch_user.user_id = user.id and batch_user.batch_id = batch.id and batch_courses.batch_id = batch.id and batch_courses.course_id  = courses.id and user.name = "Suguram";
-```
-
+```s
 | user_id | user_name | batch_id | batch_name | course_name | course_id |
 | ------- | --------- | -------- | ---------- | ----------- | --------- |
 | 7       | Suguram   | 3        | batch03    | HTML        | 1         |
