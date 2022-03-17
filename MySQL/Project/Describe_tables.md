@@ -63,17 +63,18 @@ DESC queries;
 DESC student_details;
 ```
 
-|         Field         |    Type     | Null | Key | Default |     Extra      |
-| :-------------------: | :---------: | :--: | :-: | :-----: | :------------: |
-|        user_id        |     int     | YES  | UNI |  NULL   |                |
-|      student_id       |     int     |  NO  | PRI |  NULL   | auto_increment |
-|         name          | varchar(20) |  NO  |     |  NULL   |                |
-|    contact_number     |     int     |  NO  |     |  NULL   |                |
-|     date_of_birth     |    date     |  NO  |     |  NULL   |                |
-|      parent_name      | varchar(20) |  NO  |     |  NULL   |                |
-|      parent_mail      | varchar(50) | YES  |     |  NULL   |                |
-| parent_contact_number |     int     |  NO  |     |  NULL   |                |
-|        address        | mediumtext  |  NO  |     |  NULL   |                |
+|         Field         |    Type     | Null | Key |      Default      |       Extra       |
+| :-------------------: | :---------: | :--: | :-: | :---------------: | :---------------: |
+|        user_id        |     int     | YES  | UNI |       NULL        |                   |
+|      student_id       |     int     |  NO  | PRI |       NULL        |  auto_increment   |
+|         name          | varchar(20) |  NO  |     |       NULL        |                   |
+|    contact_number     |     int     |  NO  |     |       NULL        |                   |
+|     date_of_birth     |  timestamp  |  NO  |     |       NULL        |                   |
+|      parent_name      | varchar(20) |  NO  |     |       NULL        |                   |
+|      parent_mail      | varchar(50) | YES  |     |       NULL        |                   |
+| parent_contact_number |     int     |  NO  |     |       NULL        |                   |
+|        address        | mediumtext  |  NO  |     |       NULL        |                   |
+|      enroll_time      |  timestamp  |  NO  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 
 9 rows in set (0.00 sec)
 
