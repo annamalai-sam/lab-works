@@ -55,11 +55,13 @@ DESC application_status;
 desc faq;
 ```
 
-|  Field   |    Type    | Null | Key | Default |     Extra      |
-| :------: | :--------: | :--: | :-: | :-----: | :------------: |
-|  faq_id  |    int     |  NO  | PRI |  NULL   | auto_increment |
-| question | mediumtext |  NO  |     |  NULL   |                |
-|  answer  | mediumtext | YES  |     |  NULL   |                |
+|  Field   |    Type     | Null | Key | Default |     Extra      |
+| :------: | :---------: | :--: | :-: | :-----: | :------------: |
+|  faq_id  |     int     |  NO  | PRI |  NULL   | auto_increment |
+| question | mediumtext  |  NO  |     |  NULL   |                |
+|  answer  | mediumtext  | YES  |     |  NULL   |                |
+|   mail   | varchar(50) |  NO  |     |  NULL   |                |
+|   name   | varchar(20) |  NO  |     |  NULL   |                |
 
 2 rows in set (0.00 sec)
 
