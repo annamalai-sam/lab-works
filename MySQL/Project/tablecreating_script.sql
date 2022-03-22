@@ -25,7 +25,9 @@ CREATE TABLE users (
 CREATE TABLE faq (
     faq_id INT AUTO_INCREMENT PRIMARY KEY,
     question MEDIUMTEXT NOT NULL,
-    answer MEDIUMTEXT
+    answer MEDIUMTEXT,
+    mail varchar(50) NOT NULL,
+    name varchar(20) NOT NULL
 );
 
 CREATE TABLE application_status (
