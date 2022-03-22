@@ -1,4 +1,5 @@
-use Freshschool;
+CREATE DATABASE Freshschools;
+USE Freshschool;
 CREATE TABLE roles (
     role_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL UNIQUE
