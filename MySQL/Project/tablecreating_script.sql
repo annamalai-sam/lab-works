@@ -32,7 +32,7 @@ CREATE TABLE faq (
 
 CREATE TABLE application_status (
     user_id SMALLINT UNIQUE not null,
-    result VARCHAR(20) CHECK (result in ('selected','not selected','pending')) default "pending",
+    result VARCHAR(10) CHECK (result in ('selected','not selected','pending')) default "pending",
     FOREIGN KEY (user_id)
         REFERENCES  users(user_id)
         ON UPDATE CASCADE ON DELETE CASCADE
