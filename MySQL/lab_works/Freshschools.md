@@ -19,25 +19,22 @@ SHOW TABLES;
 Empty set (0.02 sec)
 
 ```syntax
-create table students (id int primary key auto_increment, name varchar(100) not null,email varchar(100) not null unique,mobile_no bigint not null,password varchar(100) not null,gender char(1) not null,dob date,created_date timestamp not null default current_timestamp,check ( gender in ('M','F')));
+CREATE TABLE roles (
+role_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(20) NOT NULL UNIQUE
+);
 ```
 
 Query OK, 0 rows affected (0.04 sec)
 
 ```syntax
-desc students;
+desc
 ```
 
-| Field        | Type         | Null | Key | Default           | Extra             |
-| :----------- | :----------- | :--- | :-- | :---------------- | :---------------- |
-| id           | int          | NO   | PRI | NULL              | auto_increment    |
-| name         | varchar(100) | NO   |     | NULL              |                   |
-| email        | varchar(100) | NO   | UNI | NULL              |                   |
-| mobile_no    | bigint       | NO   |     | NULL              |                   |
-| password     | varchar(100) | NO   |     | NULL              |                   |
-| gender       | char(1)      | NO   |     | NULL              |                   |
-| dob          | date         | YES  |     | NULL              |                   |
-| created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| Field   | Type        | Null | Key | Default | Extra          |
+| :------ | :---------- | :--- | :-- | :------ | :------------- |
+| role_id | smallint    | NO   | PRI | NULL    | auto_increment |
+| name    | varchar(20) | NO   | UNI | NULL    |                |
 
 8 rows in set (0.01 sec)
 
