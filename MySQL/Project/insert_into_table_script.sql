@@ -7,9 +7,14 @@ values
 ("admin"),
 ("applicant");
 
-insert into faq
-(question,mail,name) values
-("What is the course fee?","test1@abc.com","test1"),("What is the duration of the program?","test2@abc.com","test2"),("Can I reapply?","test3@abc.com","test3"),("What is expected of me during the FWSA programme?","test4@abc.com","test4");
+insert into 
+faq
+(question,mail,name) 
+values
+("What is the course fee?","test1@abc.com","test1"),
+("What is the duration of the program?","test2@abc.com","test2"),
+("Can I reapply?","test3@abc.com","test3"),
+("What is expected of me during the FWSA programme?","test4@abc.com","test4");
 
 insert into 
 users
