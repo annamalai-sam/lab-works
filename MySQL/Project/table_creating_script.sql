@@ -6,7 +6,7 @@ CREATE TABLE roles (
 );
 CREATE TABLE users (
     user_id SMALLINT AUTO_INCREMENT PRIMARY KEY,
-    role_id SMALLINT,
+    role_id SMALLINT NOT NULL,
     first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
@@ -19,7 +19,8 @@ CREATE TABLE users (
     address MEDIUMTEXT,
     CHECK (gender IN ('Female' , 'Male')),
     CHECK (date_of_birth <= '2006-04-01 00:00:00'),
-    foreign key (role_id) references roles(role_id)
+    FOREIGN KEY (role_id)
+        REFERENCES roles (role_id)
 );
 
 CREATE TABLE faq (
@@ -47,7 +48,7 @@ CREATE TABLE admin_details (
 );
 CREATE TABLE application_result_checking_details (
     check_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id SMALLINT,
+    user_id SMALLINT not null,
     checked_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
     ON UPDATE CASCADE ON DELETE CASCADE

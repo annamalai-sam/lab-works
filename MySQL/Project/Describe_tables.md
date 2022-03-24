@@ -37,7 +37,7 @@ DESC application_result_checking_details;
 |    Field     |   Type    | Null | Key |      Default      |       Extra       |
 | :----------: | :-------: | :--: | :-: | :---------------: | :---------------: |
 |   check_id   |    int    |  NO  | PRI |       NULL        |  auto_increment   |
-|   user_id    | smallint  | YES  | MUL |       NULL        |                   |
+|   user_id    | smallint  |  NO  | MUL |       NULL        |                   |
 | checked_time | timestamp |  NO  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
 
 ```syntax
@@ -85,7 +85,7 @@ desc users;
 |         Field         |    Type     | Null | Key |      Default      |       Extra       |
 | :-------------------: | :---------: | :--: | :-: | :---------------: | :---------------: |
 |        user_id        |  smallint   |  NO  | PRI |       NULL        |  auto_increment   |
-|        role_id        |  smallint   | YES  | MUL |       NULL        |                   |
+|        role_id        |  smallint   |  NO  | MUL |       NULL        |                   |
 |      first_name       | varchar(20) |  NO  |     |       NULL        |                   |
 |       last_name       | varchar(20) |  NO  |     |       NULL        |                   |
 |         email         | varchar(50) |  NO  | UNI |       NULL        |                   |
