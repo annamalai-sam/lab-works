@@ -45,11 +45,13 @@ DESC application_status;
 desc queries;
 ```
 
-| queries_id | bigint | NO | PRI | NULL | auto_increment |
-| question | varchar(255) | NO | | NULL | |
-| answer | varchar(255) | NO | | NULL | |
-| mail | varchar(50) | NO | | NULL | |
-| name | varchar(20) | NO | | NULL | |
+|   Field    |     Type     | Null | Key | Default |     Extra      |
+| :--------: | :----------: | :--: | :-: | :-----: | :------------: |
+| queries_id |    bigint    |  NO  | PRI |  NULL   | auto_increment |
+|  question  | varchar(255) |  NO  |     |  NULL   |                |
+|   answer   | varchar(255) |  NO  |     |  NULL   |                |
+|    mail    | varchar(50)  |  NO  |     |  NULL   |                |
+|    name    | varchar(20)  |  NO  |     |  NULL   |                |
 
 2 rows in set (0.00 sec)
 
