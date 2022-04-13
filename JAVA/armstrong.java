@@ -11,28 +11,31 @@ public class armstrong {
         int number = num;
         int finalNumber = num;
         // System.out.println(finalNumber);
-        while (number != 0) {
-            number = number / 10;
-            powerValue++;
-        }
-        while (num != 0) {
-            int remainder = 0;
-            remainder = num % 10;
-            // System.out.println(remainder);
-            int power = 1;
-            for (int i = 0; i < powerValue; i++) {
-                power = power * remainder;
-                // System.out.println(power);
-            }
-            num = num / 10;
-            armstrongValue = armstrongValue + power;
-        }
-        System.out.println("armstrongValue : " + armstrongValue);
-        if (armstrongValue == finalNumber) {
-            System.out.println(finalNumber + "  is Armstrong number");
+        if (finalNumber < 0) {
+            System.out.println("Please enter postive number");
         } else {
-            System.out.println(finalNumber + "  is not a Armstrong number");
+            while (number != 0) {
+                number = number / 10;
+                powerValue++;
+            }
+            while (num != 0) {
+                int remainder = 0;
+                remainder = num % 10;
+                // System.out.println(remainder);
+                int power = 1;
+                for (int i = 0; i < powerValue; i++) {
+                    power = power * remainder;
+                    // System.out.println(power);
+                }
+                num = num / 10;
+                armstrongValue = armstrongValue + power;
+            }
+            System.out.println("armstrongValue : " + armstrongValue);
+            if (armstrongValue == finalNumber) {
+                System.out.println(finalNumber + "  is Armstrong number");
+            } else {
+                System.out.println(finalNumber + "  is not a Armstrong number");
+            }
         }
-
     }
 }

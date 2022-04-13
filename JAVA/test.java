@@ -61,7 +61,6 @@ class must {
         // } else {
         // System.out.println("Z is Greater than 30");
         // }
-
         // System.out.println("myvariable = " + myvariable);
         // System.out.print("Enter a number:");
         // Scanner myObj = new Scanner(System.in);
