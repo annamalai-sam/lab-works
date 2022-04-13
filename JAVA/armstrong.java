@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class armstrong {
     public static void main(String... s) {
         Scanner ObjScanner = new Scanner(System.in);
