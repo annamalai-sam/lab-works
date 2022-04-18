@@ -73,5 +73,20 @@ class must {
         // default:
         // System.out.println("number is " + myvariable);
         // }
+        int t = 10;
+        String[] arr = new String[t];
+        String element = "mango";
+        // String arrNew[] = new String[1];
+        int i = 0;
+        // for (i = 0; i < arr.length; i++) {
+        // arrNew[i] = arr[i];
+        // }
+        System.out.println(i);
+        arr[i] = element;
+        System.out.println(arr[i]);
+        // print new array
+        // for (String s : arrNew) {
+        // System.out.println(s);
+        // }
     }
 }
