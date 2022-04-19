@@ -1,7 +1,4 @@
-import java.util.*;
-
 // import java.util.Scanner;
-
 class must {
     public static void main(String[] args) {
         // System.out.println(args);
@@ -73,20 +70,59 @@ class must {
         // default:
         // System.out.println("number is " + myvariable);
         // }
-        int t = 10;
-        String[] arr = new String[t];
-        String element = "mango";
+        // int t = 10;
+        // String[] arr = new String[t];
+        // String element = "mango";
         // String arrNew[] = new String[1];
-        int i = 0;
+        // int i = 0;
         // for (i = 0; i < arr.length; i++) {
         // arrNew[i] = arr[i];
         // }
-        System.out.println(i);
-        arr[i] = element;
-        System.out.println(arr[i]);
+        // System.out.println(i);
+        // arr[i] = element;
+        // System.out.println(arr[i]);
         // print new array
         // for (String s : arrNew) {
         // System.out.println(s);
+        // }
+        // int[][][] arr = new int[3][3][3];
+        // arr[0][0][0] = 1;
+        // arr[0][0][1] = 2;
+        // arr[0][0][2] = 3;
+        // arr[0][1][0] = 4;
+        // arr[0][1][1] = 5;
+        // arr[0][1][2] = 6;
+        // arr[0][2][0] = 7;
+        // arr[0][2][1] = 8;
+        // arr[0][2][2] = 9;
+        // arr[1][0][0] = 10;
+        // arr[1][0][1] = 11;
+        // arr[1][0][2] = 12;
+        // arr[1][1][0] = 13;
+        // arr[1][1][1] = 14;
+        // arr[1][1][2] = 15;
+        // arr[1][2][0] = 16;
+        // arr[1][2][1] = 17;
+        // arr[1][2][2] = 18;
+        // arr[2][0][0] = 19;
+        // arr[2][0][1] = 20;
+        // arr[2][0][2] = 21;
+        // arr[2][1][0] = 22;
+        // arr[2][1][1] = 23;
+        // arr[2][1][2] = 24;
+        // arr[2][2][0] = 25;
+        // arr[2][2][1] = 26;
+        // arr[2][2][2] = 27;
+
+        // for (int i = 0; i < 3; i++) {
+        // for (int j = 0; j < 3; j++) {
+        // for (int k = 0; k < 3; k++) {
+        // System.out.print(arr[i][j][k] + " ");
+        // }
+        // System.out.println();
+        // }
+        // System.out.println();
+        // System.out.println();
         // }
     }
 }
