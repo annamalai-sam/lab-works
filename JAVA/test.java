@@ -1,5 +1,7 @@
 // import java.util.Scanner;
-class must {
+public class test {
+    private int a;
+
     public static void main(String[] args) {
         // System.out.println(args);
         // System.out.println("HELLO WORLD!!");
@@ -124,5 +126,19 @@ class must {
         // System.out.println();
         // System.out.println();
         // }
+        // String[] names = { "Zero", "One", "Three", "Four", "Five" };
+        // System.out.println(names.length);
+        // // System.out.println(names[2]);
+        // for (String i : names) {
+        // System.out.print(i + " ");
+        // }
+        // names[2] = "Two";
+        // System.out.println("\n" + names.length);
+        // // System.out.println(names[2]);
+        // for (String j : names) {
+        // System.out.print(j + " ");
+        // }
+        test obj = new test();
+        System.out.println(obj.a);
     }
 }
