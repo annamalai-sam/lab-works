@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class calculator {
     public static void main(String... s) {
         Scanner Obj1 = new Scanner(System.in);
@@ -34,7 +33,6 @@ public class calculator {
                 break;
         }
     }
-
     static int add(double a, Double b) {
         int temp = (int) (a + b);
         return temp;

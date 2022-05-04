@@ -1,14 +1,13 @@
-// import java.util.Scanner;
-public class test {
-    private int a;
-
+public abstract class test {
     public static void main(String[] args) {
+        System.out.println("Hello world !!!");
         // System.out.println(args);
         // System.out.println("HELLO WORLD!!");
         // System.out.print("Enter a number:");
         // Scanner sc = new Scanner(System.in);
         // int a = sc.nextInt();
         // System.out.println("sc:" + sc);
+
         // System.out.println(a);
         // Scanner A = new Scanner(System.in);
         // System.out.print("Enter first number:");
@@ -115,7 +114,6 @@ public class test {
         // arr[2][2][0] = 25;
         // arr[2][2][1] = 26;
         // arr[2][2][2] = 27;
-
         // for (int i = 0; i < 3; i++) {
         // for (int j = 0; j < 3; j++) {
         // for (int k = 0; k < 3; k++) {
@@ -138,7 +136,18 @@ public class test {
         // for (String j : names) {
         // System.out.print(j + " ");
         // }
-        test obj = new test();
-        System.out.println(obj.a);
+        // test obj = new test();
+        // System.out.println(obj.a);
+        // int[] arr = { 1, 2, 3, 4, 5 };
+        // for (int i = 0; i < arr.length - 2; ++i) {
+        // System.out.println(arr.length);
+        // System.out.println(arr[i]);
+        // }
+        // myMethod();
+
     }
+    // abstract void run ();
+    // public static void myMethod() {
+    // System.out.println(a);
+    // }
 }

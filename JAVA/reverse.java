@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class reverse {
     public static void main(String... s) {
         // System.out.println(7 / 10);
