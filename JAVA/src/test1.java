@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 class  sample {
+     sample(){
+        System.out.println("In constructor");
+    }
+
     public static void main(String[] args) {
         Scanner scan1  = new Scanner(System.in);
         int a1 = scan1.nextInt();
