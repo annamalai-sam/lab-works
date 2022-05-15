@@ -1,4 +1,4 @@
-package com.FirstPackage;
+package com.NonAccesModifier;
 class sample{
     final int c = 10;
    final void add(int c){
