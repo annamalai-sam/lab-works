@@ -1,6 +1,4 @@
 package com.theory;
-
-
     /*
                                                 Class
      Access Modifiers :
@@ -8,4 +6,5 @@ package com.theory;
                     default - Access only within the current package
      Non Access Modifiers :
                     Final - restrict from creating subclass
+                    Abstract - class cannot be instantiated.
      */

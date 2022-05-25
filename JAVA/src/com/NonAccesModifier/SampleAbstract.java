@@ -8,6 +8,9 @@ package com.NonAccesModifier;
                             all the abstract method must be override in the subclass.
  */
 abstract class AbstractClass {
+    AbstractClass(){
+        System.out.println("Annamalai");
+    }
        void  test(){
             System.out.println("Testing Abstract class with non abstract and non static method");
       }
@@ -18,7 +21,9 @@ abstract class AbstractClass {
       abstract void sample1();
 }
  class NonAbstractClass extends AbstractClass{
-
+    NonAbstractClass(){
+        super();
+    }
      @Override
      void sample() {
          System.out.println("Overriding super class abstract method");

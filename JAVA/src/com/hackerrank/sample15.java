@@ -2,7 +2,7 @@ package com.hackerrank;
 
 import java.util.*;
 
-public class sample015 {
+public class sample15 {
 
     public static void main(String[] args) {
 
