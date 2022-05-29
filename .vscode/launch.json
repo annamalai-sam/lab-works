@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MainFactory",
+            "request": "launch",
+            "mainClass": "com.DesignPattern.factory.MainFactory",
+            "projectName": "annamalai.shanmugam__lab_81dd3328"
+        },
+        {
+            "type": "java",
             "name": "Launch SampleClass",
             "request": "launch",
             "mainClass": "com.oops.SampleClass",

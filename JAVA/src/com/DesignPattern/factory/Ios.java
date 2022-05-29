@@ -1,4 +1,4 @@
-package com.DesignPattern;
+package com.DesignPattern.factory;
 
 public class Ios implements OperatingSystem{
     @Override

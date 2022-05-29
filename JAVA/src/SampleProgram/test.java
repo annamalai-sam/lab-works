@@ -87,7 +87,7 @@ public abstract class test {
         // System.out.println(s);
         // }
         // int[][][] arr = new int[3][3][3];
-        // arr[0][0][0] = 1;
+        // arr[0]= 1;
         // arr[0][0][1] = 2;
         // arr[0][0][2] = 3;
         // arr[0][1][0] = 4;

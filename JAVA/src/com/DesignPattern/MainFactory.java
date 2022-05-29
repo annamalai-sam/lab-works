@@ -1,1 +1,0 @@
-package com.DesignPattern;public class MainFactory { public static void main(String[] args) {FactoryPattern obj = new FactoryPattern();OperatingSystem os = obj.getInstance("Windows");os.appCollection();}}

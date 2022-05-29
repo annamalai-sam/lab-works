@@ -1,5 +1,4 @@
-package com.DesignPattern;
-
+package com.DesignPattern.singleton;
 public class EarlySingleton {
     private EarlySingleton(){}
     public static final EarlySingleton instance = new EarlySingleton();

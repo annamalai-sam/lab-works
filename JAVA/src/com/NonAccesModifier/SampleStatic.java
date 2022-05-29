@@ -20,9 +20,9 @@ class main{
     public static void main(String[] args) {
         int a = 10;
         int b = 10;
-//        System.out.println(SampleStatic.a);
-//        System.out.println(SampleStatic.b);
-        System.out.println(SampleStatic.add(a,b));
+        System.out.println(SampleStatic.a);
+        System.out.println(SampleStatic.b);
+//        System.out.println(SampleStatic.add(a,b));
         SampleStatic obj1 = new SampleStatic();
         SampleStatic obj2 = new SampleStatic();
         System.out.println(obj1.add(10 ,30));
