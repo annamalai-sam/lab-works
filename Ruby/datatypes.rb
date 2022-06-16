@@ -1,6 +1,23 @@
 #Number 
-sample_Number = 10
 
+words = "life is awesome".split
+puts words.inspect
+sentance = words.join(" ")
+puts sentance
+
+=begin
+nums = [2, 4, 200, 400]
+new_nums = nums.map {|number| number * 125 }
+new_nums.each {|n| puts n }
+
+
+sample_Number = 10.0
+puts "sample_Number is  #{sample_Number}"
+
+    
+rescue => exception
+    
+end
 # Booleans
 sample_Booleans1 = true
 sample_Booleans2 = false
@@ -27,3 +44,4 @@ puts sample_Symbols1
 puts sample_Symbols2
 puts sample_Symbols1.object_id
 puts sample_Symbols2.object_id
+=end 
