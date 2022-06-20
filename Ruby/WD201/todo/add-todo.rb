@@ -17,6 +17,7 @@ end
 
 connect_db!
 h = get_new_todo
+puts h
 if h
     new_todo = Todo.add_task(h)
     puts "New todo created with id #{new_todo.id}"
