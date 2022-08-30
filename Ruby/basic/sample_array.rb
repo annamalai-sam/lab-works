@@ -1,6 +1,6 @@
 students1 = ["Annamalai","Aswath","Musaraf"]
 students2 = Array["Annamalai","Chithu","Kasi","Ismile","Santa","Rishi"]
-students3 = Array.[]("Annamalai","Aswath","Haiden","Abisha")
+students3 = Array.[]("Annamalai","Aswath","Haiden")
 students4 = Array.new
 students5 = Array.new(19)
 students6 = Array.new(30, "Good Students")
@@ -25,7 +25,6 @@ students7.include?("Good Students")
 students7.join("0")
 students7.uniq
 students7.concat(3,4,5,6)
-
 
 
 # puts "#{students1}"

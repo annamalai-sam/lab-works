@@ -1,6 +1,9 @@
 class Animal
-    def initialize
-        
-    end
+    attr_accessor "name",:age
 end
-dog = Animal.new
+obj = Animal.new
+obj.name = "annamalai"
+puts obj.name
+obj.age = "nineteen"
+puts obj.age
+# puts Animal.class_variable_get(:@@name)

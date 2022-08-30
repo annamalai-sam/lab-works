@@ -1,16 +1,24 @@
 def get_command_line_argument
+  # ARGV is an array that Ruby defines for us,
+  # which contains all the arguments we passed to it
+  # when invoking the script from the command line.
+  # https://docs.ruby-lang.org/en/2.4.0/ARGF.html
   if ARGV.empty?
     puts "Usage: ruby lookup.rb <domain>"
     exit
   end
   ARGV.first
 end
+
 # `domain` contains the domain name we have to look up.
 domain = get_command_line_argument
 
+# File.readlines reads a file and returns an
+# array of string, where each element is a line
+# https://www.rubydoc.info/stdlib/core/IO:readlines
+
 file = File.open("A:\\annamalai.shanmugam__lab\\Ruby\\WD201\\zone.txt")
 dns_raw = File.readlines(file)
-# print dns_raw
 
 def parse_dns(array)
   all_record_array = []
@@ -18,6 +26,7 @@ def parse_dns(array)
   # For commented lines in file
   new_list = array.filter do |line|
     first_char = line[0, 1]
+    # puts first_char
     (first_char == "#" || line.length < 3) ? false : true
   end
   new_list.each do |line|
@@ -52,4 +61,5 @@ end
 dns_records = parse_dns(dns_raw)
 lookup_chain = [domain]
 lookup_chain = resolve(dns_records, lookup_chain, domain)
-puts "DNS Result : #{lookup_chain.join(" => ")}"
+puts lookup_chain.join(" => ")
+# puts "DNS Result : #{lookup_chain.join(" => ")}"
