@@ -13,11 +13,21 @@ function listTodo() {
         if (err) throw err;
         con.query("select * from todos;", function (err, result) {
             if (err) throw err;
-            result.forEach(element => {
-                console.log(`${element.id} ${element.todo} ${element.created_date}`);
-            });
+            if (result.length == 0) {
+                console.log("Northing in todolist");
+            } else {
+                result.forEach(element => {
+                    const currentDate = new Date(element.created_date);
+                    const currentDayOfMonth = currentDate.getDate();
+                    const currentMonth = currentDate.getMonth();
+                    const currentYear = currentDate.getFullYear();
+                    const dateString = `${currentDayOfMonth}/${currentMonth + 1}/${currentYear}`;
+                    console.log(`Todo : ${element.todo} , Created date : ${dateString}`);
+                });
+            }
         });
         con.end();
+        // con.close();
     });
 }
 
@@ -28,32 +38,85 @@ if (start_command === "L") {
 } else if (start_command === "N") {
     con.connect((err) => {
         if (err) throw err;
-        listTodo();
-        new_todo = readline.question("Todo Title : ");
-        todo_query = `insert into todos(todo) value("${new_todo}");`;
-        // console.log(todo_query);
-        con.query(todo_query, function (err, result) {
-            if (err) throw err;
-        });
         con.query("select * from todos;", function (err, result) {
             if (err) throw err;
-            result.forEach(element => {
-                console.log(`${element.id} ${element.todo} ${element.created_date}`);
+            if (result.length == 0) {
+                console.log("Northing in todolist");
+            } else {
+                result.forEach(element => {
+                    const currentDate = new Date(element.created_date);
+                    const currentDayOfMonth = currentDate.getDate();
+                    const currentMonth = currentDate.getMonth();
+                    const currentYear = currentDate.getFullYear();
+                    const dateString = `${currentDayOfMonth}/${currentMonth + 1}/${currentYear}`;
+                    console.log(`Todo : ${element.todo} , Created date : ${dateString}`);
+                });
+            }
+            new_todo = readline.question("Todo Title to add todo : ");
+            todo_query = `insert into todos(todo) value("${new_todo}");`;
+            // console.log(todo_query);
+            con.query(todo_query, function (err, result) {
+                if (err) throw err;
             });
+            con.query("select * from todos;", function (err, result) {
+                if (err) throw err;
+                if (result.length == 0) {
+                    console.log("Northing in todolist");
+                } else {
+                    result.forEach(element => {
+                        const currentDate = new Date(element.created_date);
+                        const currentDayOfMonth = currentDate.getDate();
+                        const currentMonth = currentDate.getMonth();
+                        const currentYear = currentDate.getFullYear();
+                        const dateString = `${currentDayOfMonth}/${currentMonth + 1}/${currentYear}`;
+                        console.log(`Todo : ${element.todo} , Created date : ${dateString}`);
+                    });
+                }
+            });
+            con.end();
         });
-        con.end();
     });
 }
 else if (start_command === "D") {
     con.connect((err) => {
         if (err) throw err;
-        listTodo();
-        new_todo = readline.question("Todo Title : ");
-        todo_query = `DELETE FROM todos WHERE todo = '${new_todo}';`;
-        con.query(todo_query, function (err, result) {
+        con.query("select * from todos;", function (err, result) {
             if (err) throw err;
+            if (result.length == 0) {
+                console.log("Northing in todolist");
+                // con.end();
+            } else {
+                result.forEach(element => {
+                    const currentDate = new Date(element.created_date);
+                    const currentDayOfMonth = currentDate.getDate();
+                    const currentMonth = currentDate.getMonth();
+                    const currentYear = currentDate.getFullYear();
+                    const dateString = `${currentDayOfMonth}/${currentMonth + 1}/${currentYear}`;
+                    console.log(`Todo : ${element.todo} , Created date : ${dateString}`);
+                });
+                new_todo = readline.question("Todo Title to delete: ");
+                todo_query = `DELETE FROM todos WHERE todo = '${new_todo}';`;
+                con.query(todo_query, function (err, result) {
+                    if (err) throw err;
+                });
+                con.query("select * from todos;", function (err, result) {
+                    if (err) throw err;
+                    if (result.length == 0) {
+                        console.log("Northing in todolist");
+                        // con.end();
+                    } else {
+                        result.forEach(element => {
+                            const currentDate = new Date(element.created_date);
+                            const currentDayOfMonth = currentDate.getDate();
+                            const currentMonth = currentDate.getMonth();
+                            const currentYear = currentDate.getFullYear();
+                            const dateString = `${currentDayOfMonth}/${currentMonth + 1}/${currentYear}`;
+                            console.log(`Todo : ${element.todo} , Created date : ${dateString}`);
+                        });
+                    }
+                });
+            }
+            con.end();
         });
-        con.end();
-        listTodo();
     });
 }
