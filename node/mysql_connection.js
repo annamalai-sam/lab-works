@@ -1,9 +1,10 @@
 var mysql = require('mysql2');
+require('dotenv').config();
 
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "AnnaMalai@19"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER_NAME,
+    password: process.env.DB_PASSWORD
 });
 
 con.connect((err) => {
@@ -15,6 +16,9 @@ con.connect((err) => {
         if (err) throw err;
         console.log("===========================");
         console.log(result[1].Database);
+        result.forEach(element => {
+            console.log(element.Database);
+        });
     });
     con.end();
     console.log("==========================");

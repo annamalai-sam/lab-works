@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.0.2",
     "mysql2": "^2.3.3",
     "readline-sync": "~1.4.9",
     "string": "^3.3.3"
