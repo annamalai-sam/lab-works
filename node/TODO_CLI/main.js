@@ -12,22 +12,20 @@ function getDbConnection(host, userName, password, db_name) {
     return con;
 }
 async function getDBQuery(connection, requestQuery) {
- await   connection.connect(function (err) {
+    await connection.connect(function (err) {
         if (err) throw err;
-        
-
         connection.query(requestQuery, async function (error, result) {
             console.log(result);
-           
-            if (error)throw error;
-             
+
+            if (error) throw error;
+
         });
-       
-   connection.end();  
-  });
+
+        connection.end();
+    });
 }
- async function getDataFromDB(DB_details, requestQuery) {
-   await DB_details.connect( function (err) {
+async function getDataFromDB(DB_details, requestQuery) {
+    await DB_details.connect(function (err) {
         if (err) throw err;
         DB_details.query(requestQuery, function (err, result) {
             if (err) throw err;
@@ -59,26 +57,32 @@ async function getDBQuery(connection, requestQuery) {
 // const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
 // getDBQuery(DB_details, `insert into todos(todo) value("${new_todo}");`);
 
- async function listTodo() {
-    console.log("List");
-  const DB_details = await getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
-   await getDataFromDB(DB_details, "select * from todos;");
-    console.log("List");
+async function listTodo() {
+    // console.log("List");
+    const DB_details = await getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
+    await getDataFromDB(DB_details, "select * from todos;");
+    // console.log("List");
 }
 function addTodo() {
-    new_todo = readline.question("Todo Title to add todo : ");
-    console.log(`insert into todos(todo) value("${new_todo}");`);
-    const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
-    getDBQuery(DB_details, `insert into todos(todo) value("${new_todo}");`);
+    listTodo();
+    setTimeout(() => {
+        new_todo = readline.question("Todo Title to add todo : ");
+        const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
+        getDBQuery(DB_details, `insert into todos(todo) value("${new_todo}");`);
+        // DB_details.end();
+    }, 2000);
 }
 function deleteTodo() {
-    console.log("Delete");
-    const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
-   // getDataFromDB(DB_details, "select * from todos;");
-    new_todo = readline.question("Todo Title to delete: ");
-
-    getDBQuery(DB_details, `DELETE FROM todos WHERE todo = '${new_todo}';`);
-  //  getDataFromDB(DB_details, "select * from todos;");
+    // console.log("Delete");
+    listTodo();
+    setTimeout(() => {
+        const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
+        // getDataFromDB(DB_details, "select * from todos;");
+        new_todo = readline.question("Todo Title to delete: ");
+        getDBQuery(DB_details, `DELETE FROM todos WHERE todo = '${new_todo}';`);
+    }, 2000);
+    // listTodo();
+    //  getDataFromDB(DB_details, "select * from todos;");
 }//
 
 // listTodo();

@@ -1,25 +1,27 @@
 const readline = require("readline-sync");
 const todo = require("./main");
 
- async function kickOffTodo() {
+async function kickOffTodo() {
     let startCommand = readline.question("press 'L' to list todo, press 'N' to create new todo,press 'D' to delete the todo, press 'END' to end the app : ");
     switch (startCommand) {
         case "L":
-           await todo.listTodo()
-
+            await todo.listTodo()
             setTimeout(() => {
-                                kickOffTodo()
-
+                kickOffTodo()
             }, 2000);
-             
             break;
         case "N":
             todo.addTodo();
-            kickOffTodo();
+            setTimeout(() => {
+                kickOffTodo();
+            }, 2000);
             break;
         case "D":
             todo.deleteTodo();
-            kickOffTodo();
+            setTimeout(() => {
+                kickOffTodo();
+            }, 2000);
+
             break;
         case "END":
             break;
@@ -27,9 +29,9 @@ const todo = require("./main");
             console.log("Command not found ");
             kickOffTodo();
             break;
-        
+
     }
-//kickOffTodo()
+    //kickOffTodo()
 
     //  todo.addTodo();
     //  todo.deleteTodo(); 
