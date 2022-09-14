@@ -1,128 +1,103 @@
 const readline = require("readline-sync");
 // let todo = require("./main");
 const mysql = require('mysql2');
-require('dotenv').config();
+require('dotenv').config({ path: './../.env' });
 
-function getDataFromDB() {
+function getDbConnection(host, userName, password, db_name) {
     var con = mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER_NAME,
-        password: process.env.DB_PASSWORD,
-        database: "todo"
+        host: host,
+        user: userName,
+        password: password,
+        database: db_name
     });
-    // console.log("==========================");
-    con.connect((err) => {
+    return con;
+}
+function getDataFromDB(connection, requestQuery) {
+    connection.connect(function (err) {
         if (err) throw err;
-        // console.log("==========================");
-        con.query("select * from todos;", function (err, result) {
+        connection.query(requestQuery, function (err, result) {
             if (err) throw err;
-            if (result.length == 0) {
-                console.log("Northing in todolist");
-            } else {
-                console.log("================================================================");
-                result.forEach(element => {
-                    const currentDate = new Date(element.created_date);
-                    const currentDayOfMonth = currentDate.getDate();
-                    const currentMonth = currentDate.getMonth();
-                    const currentYear = currentDate.getFullYear();
-                    const dateString = `${currentDayOfMonth}/${currentMonth + 1}/${currentYear}`;
-                    console.log(`Todo : ${element.todo} , Created date : ${dateString}`);
-                });
-                console.log("================================================================");
-            }
+            console.log("=================================");
+            console.log(result);
+            console.log("=================================");
         });
-        con.end();
+        connection.end();
     });
-}
-// getDataFromDB();
-
-function deleteValueFromDB() {
-    var con = mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER_NAME,
-        password: process.env.DB_PASSWORD,
-        database: "todo"
-    });
-    con.connect((err) => {
-        if (err) throw err;
-        new_todo = readline.question("Todo Title to delete: ");
-        todo_query = `DELETE FROM todos WHERE todo = '${new_todo}';`;
-        con.query(todo_query, function (err, result) {
-            if (err) throw err;
-        });
-        con.end();
-    });
+    return "Test"
 }
 
-// deleteValueFromDB();
-
-function addValueToDB() {
-    var con = mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER_NAME,
-        password: process.env.DB_PASSWORD,
-        database: "todo"
-    });
-    con.connect((err) => {
-        if (err) throw err;
-        new_todo = readline.question("Todo Title to add todo : ");
-        todo_query = `insert into todos(todo) value("${new_todo}");`;
-        // console.log(todo_query);
-        con.query(todo_query, function (err, result) {
-            if (err) throw err;
-        });
-        con.end();
-    });
-}
-
-// addValueToDB();
+const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
+let valueFromDB = getDataFromDB(DB_details, "Show Databases");
+console.log("=================================");
+console.log("Outer");
+console.log(valueFromDB);
+console.log("=================================");
 
 
-function kickOffTodo() {
-    let startCommand = readline.question("press 'L' to list todo, press 'N' to create new todo,press 'D' to delete the todo, press 'END' to end the app : ");
-    console.log(startCommand);
-    
-    // if (startCommand == "L") {
-    //     getDataFromDB();
-    //     kickOffTodo();
-    // }
-    // else if (startCommand == "N") {
-    //     getDataFromDB();
-    //     addValueToDB();
-    //     getDataFromDB();
-    //     kickOffTodo();
-    // }
-    // else if (startCommand == "D") {
-    //     getDataFromDB();
-    //     deleteValueFromDB();
-    //     getDataFromDB();
-    //     kickOffTodo();
-    // }
-    // else if (startCommand == "END") {
 
-    // }
-    // else {
 
-    // }
-    // switch (startCommand) {
-    //     case "L":
-    //         getDataFromDB();
-    //         kickOffTodo();
-    //         break;
-    //     case "N":
-    //         getDataFromDB();
-    //         addValueToDB();
-    //         getDataFromDB();
-    //         kickOffTodo();
-    //         break;
-    //     case "D":
-    //         getDataFromDB();
-    //         deleteValueFromDB();
-    //         getDataFromDB();
-    //         kickOffTodo();
-    //         break;
-    //     case "End":
-    //         break;
-    // }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function kickOffTodo() {
+//     let startCommand = readline.question("press 'L' to list todo, press 'N' to create new todo,press 'D' to delete the todo, press 'END' to end the app : ");
+//     console.log(startCommand);
+
+//     // if (startCommand == "L") {
+//     //     getDataFromDB();
+//     //     kickOffTodo();
+//     // }
+//     // else if (startCommand == "N") {
+//     //     getDataFromDB();
+//     //     addValueToDB();
+//     //     getDataFromDB();
+//     //     kickOffTodo();
+//     // }
+//     // else if (startCommand == "D") {
+//     //     getDataFromDB();
+//     //     deleteValueFromDB();
+//     //     getDataFromDB();
+//     //     kickOffTodo();
+//     // }
+//     // else if (startCommand == "END") {
+
+//     // }
+//     // else {
+
+//     // }
+//     // switch (startCommand) {
+//     //     case "L":
+//     //         getDataFromDB();
+//     //         kickOffTodo();
+//     //         break;
+//     //     case "N":
+//     //         getDataFromDB();
+//     //         addValueToDB();
+//     //         getDataFromDB();
+//     //         kickOffTodo();
+//     //         break;
+//     //     case "D":
+//     //         getDataFromDB();
+//     //         deleteValueFromDB();
+//     //         getDataFromDB();
+//     //         kickOffTodo();
+//     //         break;
+//     //     case "End":
+//     //         break;
+//     // }
+// }
 // kickOffTodo();

@@ -7,7 +7,7 @@ var con = mysql.createConnection({
     password: "AnnaMalai@19",
     database: "todo"
 });
-
+    
 function listTodo() {
     con.connect((err) => {
         if (err) throw err;
