@@ -77,9 +77,10 @@ function deleteTodo() {
     listTodo();
     setTimeout(() => {
         const DB_details = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
-        // getDataFromDB(DB_details, "select * from todos;");
+
         new_todo = readline.question("Todo Title to delete: ");
-        getDBQuery(DB_details, `DELETE FROM todos WHERE todo = '${new_todo}';`);
+        const DB_detail = getDbConnection(process.env.DB_HOST, process.env.DB_USER_NAME, process.env.DB_PASSWORD, "todo");
+        getDBQuery(DB_detail, `DELETE FROM todos WHERE todo = '${new_todo}';`);
     }, 2000);
     // listTodo();
     //  getDataFromDB(DB_details, "select * from todos;");
