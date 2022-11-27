@@ -1,0 +1,12 @@
+{
+    "getConfig":{
+        "ticketField1" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField2" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField3" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField4" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField5" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField6" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField7" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}],
+        "ticketField8" : [{"option1" : ["excluded", "values"]},{"option2" : ["excluded", "values"]},{"option3" : ["excluded", "values"]}]
+    }
+}
